@@ -1,8 +1,12 @@
 require("dotenv").config()
+const cors = require("cors")
 const express = require("express")
 
 const app = express();
 const PORT = process.env.PORT
+
+app.use(cors())
+
 app.get("/",(req, res)=> {
     const jsonData = {
         networks: Math.floor(Math.random() * 10),
